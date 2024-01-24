@@ -1,0 +1,9 @@
+Зареждате базата от дани db_name
+разхивирате в xamp/htdocs public_html
+така че всички фаилове да се достигат от htdocs/public_html
+като напимер htdocs/public_html/welcome_page.html
+пускате xamp сървера и сте готови
+
+може да login или registration като след това те изпраща
+на твоята account страница(account съм го направил php вместо  html)
+и съм сложил default стоиности на registration.
