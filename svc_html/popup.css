@@ -1,0 +1,94 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+
+.popup {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	
+}
+
+.contentBox {
+	position: relative;
+	width: 600px;
+	height: 400px;
+	background: #fdfdf3;
+	border-radius: 20px;
+	display: flex;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 1);	
+}
+
+.contentBox .imgBx {
+	position: relative;
+	width: 300px;
+	height: 400px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.contentBox .imgBx img {
+	position: relative;
+	max-height: 250px;
+	z-index: 1;
+}
+
+.contentBox .content-popup {
+	position: relative;
+	width: 300px;
+	height: 400px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.contentBox .content-popup h3 {
+	color: #333;
+	line-height: 1em;
+	font-weight: 300;
+	font-size: 2em;
+}
+
+.contentBox .content-popup h2 {
+	font-size: 3em;	
+	color: #460154;
+	padding: 10px 0;
+}
+
+.contentBox .content-popup p {
+	padding-right: 16px;
+	padding-bottom: 20px;
+}
+
+.contentBox .content-popup a {
+	display: inline-block;
+	padding: 10px 20px;
+	background: #460154;
+	color: #fff;
+	text-decoration: none;
+	border-radius: 10px;
+}
+
+.contentBox .content-popup a:hover {
+	background: #75018c;
+}
+
+.close {
+	position: absolute;
+	top: 15px;
+    right: -8px;
+	width: 40px;
+	height: 40px;
+	float: right;
+	cursor: pointer;
+	z-index: 10;
+}
+
+.close:hover {
+	color: #a090a3;
+}

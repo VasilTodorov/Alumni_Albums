@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="description" content="Регистрация в Алумни клуба" />
+
+	<title>Регистрация</title>
+
+	<link rel="stylesheet" type="text/css" href="styles-login.css">
+	<link rel="stylesheet" type="text/css" href="backgraund-effect-animation.css">
+	<script src="script.js"></script>
+
+
+</head>
+<body>
+	<div class="gradient-bg">
+		<div class="gradients-container">
+			
+			<div class="g1"></div>
+			<div class="g2"></div>
+			<div class="g3"></div>
+			<div class="g4"></div>
+			<div class="g5"></div>
+
+			<div class="interactive"></div>
+
+			<div id="login-form" class="login-page">
+					<div class="form-box">
+
+						<div class="button-box">
+							<div id="btn"></div>
+							<button type="button" onclick="login()" class="toggle-btn">Влизане</button>
+							<button type="button" onclick="register()" class="toggle-btn">Регистрация</button>
+						</div>
+
+						<form id="login" class="input-group-login" action="./login_backend.php" method="post">
+							<input type="text" class="input-field" name="username" placeholder="Потребителско име" required minlength="3" maxlength="10">
+							<input type="password" class="input-field" name="password" placeholder="Парола" required required minlength="6" maxlength="10" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).*$">
+							<button class="submit-btn register-btn" type="submit">Влез</button>
+						</form>
+
+						<form id="register" class="input-group-register" action="./registration_backend.php" method="post">
+							<input type="text" class="input-field" value="Lolo" name="first_name" placeholder="Име" required maxlength="50">
+							<input type="text" class="input-field" value="Pani" name="last_name" placeholder="Фамилия" required maxlength="50">
+							<input type="email" class="input-field" value="koko@dd.com" name="email" placeholder="Имейл" required>
+							<input type="text" class="input-field" value="???" name="username" placeholder="Потребителско име" required minlength="3" maxlength="10">
+							<input type="number" class="input-field" value=2019  name="graduation" placeholder="Випуск" required pattern="\d{4}">
+							<input type="number" class="input-field" value=1 name="stream" placeholder="Поток" required pattern="[1-2]*{1}">
+							<input type="number" class="input-field" name="faculty_number" placeholder="Факултетен номер" required pattern="[A-Za-z0-9]{1,10}">
+							<select id="choice" class="input-field" name="major">
+			            <option value="kn">Компютърни науки</option>
+			            <option value="i">Информатика</option>
+			            <option value="is">Информационни Системи</option>
+			            <option value="m">Математика и информатика</option>
+			            <option value="stat">Статистика</option>
+			            <option value="pm">Приложна математика</option>
+			            <option value="si">Софтуерно инженерство</option>
+			        </select>
+							<input type="password" class="input-field" name="password" value="kidhLL90" placeholder="Въведете парола" required minlength="6" maxlength="10" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).*$">
+							<input type="password" class="input-field" value="kidhLL90" placeholder="Потвърдете парола" required minlength="6" maxlength="10" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).*$">							
+							<button class="submit-btn register-btn" type="submit">Регистрирай се</button>
+						</form>
+
+					</div>
+			</div>
+			
+		</div>
+	</div>
+
+	<script>
+		var x = document.getElementById('login');
+		var y = document.getElementById('register');
+		var z = document.getElementById('btn');
+		function register()
+		{
+			x.style.left = '-400px';
+			y.style.left = '50px';
+			z.style.left = '110px';
+		}
+		function login()
+		{
+			x.style.left = '50px';
+			y.style.left = '450px';
+			z.style.left = '0px';
+		}
+	</script>
+
+<script>
+	// JavaScript code to handle the error message display
+	document.addEventListener('DOMContentLoaded', function() {
+		var errorContainer = document.getElementById('register');
+
+		// Check if the error parameter is present in the URL
+		var urlParams = new URLSearchParams(window.location.search);
+		if (urlParams.has('error') && urlParams.get('error') === 'username_taken') {
+			// Display the error message
+			var errorMessage = document.createElement('p');
+			errorMessage.className = 'error-message';
+			errorMessage.style.color = "red";
+			errorMessage.textContent = 'Username or faculty number is already taken.Please choose a different username.';
+			errorContainer.appendChild(errorMessage);
+			
+		}
+	});
+
+	document.addEventListener('DOMContentLoaded', function() {
+		var errorContainer = document.getElementById('login');
+
+		// Check if the error parameter is present in the URL
+		var urlParams = new URLSearchParams(window.location.search);
+		if (urlParams.has('error') && urlParams.get('error') === 'invalid_data') {
+			// Display the error message
+			var errorMessage = document.createElement('p');
+			errorMessage.className = 'error-message';
+			errorMessage.style.color = "red";
+			errorMessage.textContent = 'Username or Password are incorect.';
+			errorContainer.appendChild(errorMessage);
+			
+		}
+	});
+</script>
+
+</body>
+</html>
